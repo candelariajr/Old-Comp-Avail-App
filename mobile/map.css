@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+
+
+/* add space above footer (using border instead of margin because it makes IE 6 happy) */
+#content {border-bottom: 30px solid #f6f5f4;}
+
+/* main map wrapper and internal text elements */
+#map_container_300, #map_container_600, #map_container_900 {background: #fff; padding: 5px; color: #686868; position: relative;}
+#map_container_300 {width:310px;}
+
+
+#computer_map_first_300, #computer_map_lower_300, #computer_map_second_300, #computer_map_third_300, #computer_map_fourth_300 {
+	display: block;
+	width: 300px;
+	height: 235px;
+	overflow: hidden;
+	position: relative;
+}
+
+#computer_map_first_300 {
+	background: no-repeat url(../images/first_300.png);
+}
+
+#computer_map_lower_300 {
+	background: no-repeat url(../images/lower_300.png);
+}
+
+#computer_map_second_300 {
+	background: no-repeat url(../images/second_300.png);
+}
+
+#computer_map_third_300 {
+	background: no-repeat url(../images/third_300.png);
+}
+
+#computer_map_fourth_300 {
+	background: no-repeat url(..images/fourth_300.png);
+}
+
+dt.busy_pc_300, dt.avail_pc_300, dt.offline_300, dt.pilot_300, dt.microfilm_300, dt.busy_mac_300, dt.avail_mac_300, dt.avail_pc_public_300 {width: 12px; height: 12px;}
+dt.busy_pc_300 		{background: no-repeat url(../images/pc-unavailable-10px.png);}
+dt.avail_pc_300 	{background: no-repeat url(../images/pc-available-10px.png);}
+dt.busy_mac_300 	{background: no-repeat url(../images/mac-unavailable-10px.png);}
+dt.avail_mac_300 	{background: no-repeat url(../images/mac-available-10px.png);}
+dt.avail_pc_public_300 	{background: no-repeat url(../images/pc-available-public-10px.png);}
+dt.offline_300          {background: no-repeat url(../images/maintenance-icon-10px.png);}
+dt.pilot_300          {background: no-repeat url(../images/pc-vm-10px.png);}
+dt.microfilm_300          {background: no-repeat url(../images/microfilm_10px.png);}
+	
+
+
+	
+dt.mapicon {
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	outline: none;
+	z-index: 10;
+	text-decoration: none;
+}
+
+
+
+#legend {
+	border: 1px solid #aaa;
+	margin-right: 180px;
+	margin-top: 1em;
+	color: #686868;
+	width:130px;
+	background: #ffffff;
+}
+
+#legend td {
+	padding: 2px;
+	font-size: 10px;
+}
+
+
+/*Styles for summary table*/
+
+#summary {
+	margin-bottom:15px;
+}
+
+#summary table {
+	border-collapse: collapse;
+	
+}
+
+#summary td {
+	padding: 5px 35px 5px 10px;
+	font-size: 10px;
+	border-bottom: 1px solid #aaa;
+	background-color: #f1f0f0;
+}
+
+#summary th {
+	font-weight:900;
+	color: #686868;
+	font-size:11px;
+	background-color: #d6d6d6;
+	padding: 5px 35px 5px 10px;
+}
+
+#summary caption {
+	font-weight:900;
+	color: #686868;
+	padding: 5px;
+	text-align: left;
+	font-size: 14px;
+}
+
+
+

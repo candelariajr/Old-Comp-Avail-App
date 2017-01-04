@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+
+
+/* add space above footer (using border instead of margin because it makes IE 6 happy) */
+#content {border-bottom: 30px solid #f6f5f4;}
+
+/* main map wrapper and internal text elements */
+#map_container_300, #map_container_600, #map_container_900 {background: #fff; padding: 5px; color: #686868; position: relative;}
+#map_container_900 {width: 910px; margin-right:100px; float:right;}
+
+#wrapper {
+background: #fff;
+}
+
+#computer_map_lower_900, #computer_map_first_900, #computer_map_second_900, #computer_map_third_900 {
+	display: block;
+	width: 900px;
+	overflow: hidden;
+	position: relative;
+}
+
+#computer_map_lower_900 {
+	background: no-repeat url(../images/lower_900.png);
+	height: 705px;
+}
+#computer_map_first_900 {
+	background: no-repeat url(../images/first_900.png);
+	height: 705px;
+}
+#computer_map_second_900 {
+	background: no-repeat url(../images/second_900.png);
+	height: 705px;
+}
+#computer_map_third_900 {
+	background: no-repeat url(../images/third_900.png);
+	height: 705px;
+}
+
+
+dt.busy_pc_900, dt.avail_pc_900, dt.busy_mac_900, dt.avail_mac_900, dt.avail_pc_public_900, dt.offline_900 {width: 36px; height: 36px;}
+dt.busy_pc_900 		{background: no-repeat url(../images/pc-unavailable-30px.png);}
+dt.avail_pc_900 	{background: no-repeat url(../images/pc-available-30px.png);}
+dt.avail_pc_public_900 	{background: no-repeat url(../images/pc-available-public-30px.png);}
+dt.busy_mac_900 	{background: no-repeat url(../images/mac-unavailable-30px.png);}
+dt.avail_mac_900 	{background: no-repeat url(../images/mac-available-30px.png);}
+dt.offline_900          {background: no-repeat url(../images/maintenance-icon-30px.png);}
+
+
+	
+dt.mapicon {
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	outline: none;
+	z-index: 10;
+	text-decoration: none;
+}
+
+
+#legend {
+	border: 1px solid #aaa;
+	margin-right: 180px;
+	margin-top: 1em;
+	color: #686868;
+	width:180px;
+	background: #ffffff;
+}
+
+#legend td {
+	padding: 2px;
+	font-size: 16px;
+}
+
+
+/*Styles for summary table*/
+
+#summary {
+	margin-bottom:15px;
+}
+
+#summary table {
+	border-collapse: collapse;
+	
+}
+
+#summary td {
+	padding: 5px 35px 5px 10px;
+	font-size: 16px;
+	border-bottom: 1px solid #aaa;
+	background-color: #f1f0f0;
+}
+
+#summary th {
+	font-weight:900;
+	color: #686868;
+	font-size:16px;
+	background-color: #d6d6d6;
+	padding: 5px 35px 5px 10px;
+}
+
+#summary caption {
+	font-weight:900;
+	color: #686868;
+	padding: 5px;
+	text-align: left;
+	font-size: 14px;
+}
+
+
+
