@@ -1,3 +1,6 @@
+##Crappy old Spaghetti Code Warning:
+This app was a disaster to begin with. It was spaghetti on top of spaghetti on top of spaghetti. Although some of it has been fixed, it's still pretty awful. This repo is here to help me sync up my efforts from home with my efforts from the office. The main goal is to just get the stupid thing reasonably working, then to finish the Postgre - Laravel - Vue product.
+
 ##Computer Availability Map app 
 
 This is the version currently in production. The project code from the code4Lib article 
