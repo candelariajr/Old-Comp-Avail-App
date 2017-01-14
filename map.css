@@ -194,6 +194,10 @@ dt.mapicon {
     z-index: 10;
 }
 #legend {
+    display: inline;
+}
+
+#legend > table{
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
@@ -240,7 +244,7 @@ dt.mapicon {
     margin-top: 1em;
     width: 130px;
 }
-#legend td {
+#legend > table td {
     font-size: 10px;
     padding-bottom: 2px;
     padding-left: 2px;

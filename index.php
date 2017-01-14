@@ -286,7 +286,10 @@ else{
             </tr>
         </table>
     </div>
-    <!-- WHAT?? -->
+    <!--
+    Divs were nested in tables and tables in divs. CSS was patched to accomidate this.
+    DOM restructured. CSS fixed.
+    -->
     <div id="legend">
         <table>
             <tr>
