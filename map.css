@@ -340,3 +340,9 @@ dt.mapicon {
 .editorDropdown{
     width: 120px;
 }
+
+#ui-id-2{
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
