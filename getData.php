@@ -5,7 +5,7 @@
  * Date: 1/16/2017
  * Time: 8:27 PM
  */
-require_once "dbauth.config";
+require_once "dbauth.php";
 $conn = new mysqli("localhost", $user, $password, $database);
 if($conn->connect_error){
     die("Connection Failed!");
@@ -56,10 +56,21 @@ if(isset($_GET["names"])){
     $conn->close();
 }
 
+/**
+ * @param $inputString
+ *  Takes an input string and sanitizes it....removing all alphanumeric chars
+ * @return mixed
+ *  Returns the string sanitized
+ */
 function filter($inputString){
     return preg_replace("/[^a-zA-Z0-9-_ \"\n\"]/", "", $inputString);
 }
 
+/**
+ * @param $result
+ * This takes an argument of a mysqli_result object and outputs the results
+ * in an array of tuples in JSON format.
+ */
 function outputJSONData($result){
     if(get_class($result) == "mysqli_result"){
         $columns = array();

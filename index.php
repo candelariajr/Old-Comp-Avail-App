@@ -55,7 +55,7 @@ else{
             ?>
         </h3>
         <?php
-            require_once "dbauth.config";
+            require_once "dbauth.php";
             #connect to the database
             $DB = mysqli_connect('localhost', $user, $password);
             @mysqli_select_db($DB, $database) or die("Unable to select database");

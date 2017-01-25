@@ -100,8 +100,7 @@ function populateOriginalParamsWithName(name){
             $('#originalPilot').attr({
                 data: data.is_pilot
             }).html(displayYesNo(data.is_pilot));
-
-            $('#recordID').text("Id: "  + data.id);
+            $('#recordID').html("Id: <span id='recordIDNum'>"  + data.id + "</span>");
         }
     });
 }
@@ -289,7 +288,41 @@ function addCombo() {
 }
 
 function submit(){
-    var testText ="";
+    var idContainer = $("#recordIDNum").html();
+    if(idContainer != undefined){
+        $.ajax({
+            url: "alterData.php?"
+            + "id=" + filterNull(idContainer)
+            + "&computer_name=" + filterNull($("#newName").val())
+            + "&top_pos=" + filterNull($("#newTop").val())
+            + "&left_pos=" + filterNull($("#newRight").val())
+            + "&table_name=" + filterNull($("#newTableName").val())
+            + "&seat=" + filterNull($("#newSeat").val())
+            + "&floor=" + $("#newFloor").val()
+            + "&computer_type=" + $("#newType").val()
+            + "&is_public=" + $("#newPublic").val()
+            + "&is_excluded=" + $("#newExcluded").val()
+            + "&is_dedicated=" + $("#newDedicated").val()
+            + "&is_pilot=" + $("#newPilot").val(),
+            success: function(result){
+                $("#messageContent").html(result);
+                $("#dialog-message").dialog({
+                    modal: true,
+                    buttons: {
+                        Ok: function() {
+                            $(this).dialog("close");
+                            location.reload();
+                        }
+                    }
+                });
+            }
+        });
+    }
+    else{
+        alert("Cannot submit changes where no machine is selected!");
+    }
+}
 
-    alert("Submitted!");
+function filterNull(element){
+    return (element == undefined || element == "") ? "null" : element;
 }

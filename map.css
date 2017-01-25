@@ -2,29 +2,20 @@
 /* CSS Document */
 /* Computer availabilty map 12.2.2013 MU*/
 /* addditions- font family, #main, bumped up font size on summary table 10-15px float changed right to left*/
-
+/* Jonathan C: Optimized CSS, added selectors for added editor component, removed deprecated selectors */
 
 #main { font-family: Arial,Helvetica,Verdana,"Bitstream Vera Sans",sans-serif; }
 
 #content {
-    border-bottom-color: #F6F5F4;
-    border-bottom-style: solid;
-    border-bottom-width: 30px;
+    border-bottom: 30px solid #F6F5F4;
 }
 #map_container_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: #FFFFFF;
-    background-image: none;
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: repeat;
+    background: #FFFFFF none repeat scroll 0 0;
     background-size: auto auto;
     color: #686868;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding: 5px;
     position: relative;
 }
 #map_container_600 {
@@ -43,57 +34,38 @@
     width: 600px;
 }
 #computer_map_first_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/first_600.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/first_600.png") no-repeat scroll 0 0;
     background-size: auto auto;
     height: 600px;
 }
 #computer_map_lower_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/lower_600.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/lower_600.png") no-repeat scroll 0 0;
     background-size: auto auto;
     height: 600px;
 }
 #computer_map_second_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/second_600.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/second_600.png") no-repeat scroll 0 0;
     background-size: auto auto;
     height: 662px;
 }
 #computer_map_third_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/third_600.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/third_600.png") no-repeat scroll 0 0;
     background-size: auto auto;
     height: 600px;
 }
 #computer_map_fourth_600 {
-    background-attachment: scroll;
+    /*Fourth Floor Not in use!*/
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/fourth_600.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("") no-repeat scroll 0 0;
     background-size: auto auto;
 }
 dt.busy_pc_600, dt.avail_pc_600, dt.offline_600, dt.pilot_600, dt.microfilm_600, dt.busy_mac_600, dt.avail_mac_600, dt.avail_pc_public_600, dt.avail_mac_public_600 {
@@ -101,94 +73,58 @@ dt.busy_pc_600, dt.avail_pc_600, dt.offline_600, dt.pilot_600, dt.microfilm_600,
     width: 15px;
 }
 dt.busy_pc_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/pc-unavailable-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/pc-unavailable-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.avail_pc_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/pc-available-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/pc-available-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.avail_pc_public_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/pc-available-public-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/pc-available-public-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.busy_mac_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/mac-unavailable-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/mac-unavailable-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.avail_mac_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/mac-available-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/mac-available-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.offline_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/maintenance-icon-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/maintenance-icon-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.pilot_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/pc-vm-20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/pc-vm-20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.microfilm_600 {
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("images/microfilm_20px.png");
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0) url("images/microfilm_20px.png") no-repeat scroll 0 0;
     background-size: 15px 15px;
 }
 dt.mapicon {
-    -moz-text-blink: none;
-    -moz-text-decoration-color: -moz-use-text-color;
     -moz-text-decoration-line: none;
     -moz-text-decoration-style: solid;
     display: block;
-    outline-color: -moz-use-text-color;
-    outline-style: none;
-    outline-width: medium;
+    outline: -moz-use-text-color none medium;
     position: absolute;
     text-indent: -9999px;
     z-index: 10;
@@ -202,43 +138,17 @@ dt.mapicon {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    background-attachment: scroll;
     background-clip: border-box;
-    background-color: #FFFFFF;
-    background-image: none;
     background-origin: padding-box;
-    background-position: 0 0;
-    background-repeat: repeat;
+    background: #FFFFFF none repeat scroll 0 0;
     background-size: auto auto;
-    border-bottom-color: #AAAAAA;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
     border-image-outset: 0 0 0 0;
     border-image-repeat: stretch stretch;
     border-image-slice: 100% 100% 100% 100%;
     border-image-source: none;
     border-image-width: 1 1 1 1;
-    border-left-color-ltr-source: physical;
-    border-left-color-rtl-source: physical;
-    border-left-color-value: #AAAAAA;
-    border-left-style-ltr-source: physical;
-    border-left-style-rtl-source: physical;
-    border-left-style-value: solid;
-    border-left-width-ltr-source: physical;
-    border-left-width-rtl-source: physical;
-    border-left-width-value: 1px;
-    border-right-color-ltr-source: physical;
-    border-right-color-rtl-source: physical;
-    border-right-color-value: #AAAAAA;
-    border-right-style-ltr-source: physical;
-    border-right-style-rtl-source: physical;
-    border-right-style-value: solid;
-    border-right-width-ltr-source: physical;
-    border-right-width-rtl-source: physical;
-    border-right-width-value: 1px;
-    border-top-color: #AAAAAA;
-    border-top-style: solid;
-    border-top-width: 1px;
+    border-top: 1px solid #AAAAAA;
+    border-bottom: 1px solid #AAAAAA;
     color: #686868;
     margin-right: 180px;
     margin-top: 1em;
@@ -246,10 +156,7 @@ dt.mapicon {
 }
 #legend > table td {
     font-size: 10px;
-    padding-bottom: 2px;
-    padding-left: 2px;
-    padding-right: 2px;
-    padding-top: 2px;
+    padding: 2px;
 }
 #summary {
     margin-bottom: 15px;
@@ -259,33 +166,22 @@ dt.mapicon {
 }
 #summary td {
     background-color: #F1F0F0;
-    border-bottom-color: #AAAAAA;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+    border-bottom: 1px solid #AAAAAA;
     font-size: 15px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 35px;
-    padding-top: 5px;
+    padding: 5px 35px 5px 10px;
 }
 #summary th {
     background-color: #D6D6D6;
     color: #686868;
     font-size: 11px;
     font-weight: 900;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 35px;
-    padding-top: 5px;
+    padding: 5px 35px 5px 10px;
 }
 #summary caption {
     color: #686868;
     font-size: 14px;
     font-weight: 900;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding: 5px;
     text-align: left;
 }
 
@@ -303,33 +199,22 @@ dt.mapicon {
 }
 #editor td {
     background-color: #F1F0F0;
-    border-bottom-color: #AAAAAA;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
+    border-bottom: 1px solid #AAAAAA;
     font-size: 15px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
+    padding: 5px 10px;
 }
 #editor th {
     background-color: #D6D6D6;
     color: #686868;
     font-size: 11px;
     font-weight: 900;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
+    padding: 5px 10px;
 }
 #editor caption {
     color: #686868;
     font-size: 14px;
     font-weight: 900;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
+    padding: 5px;
     text-align: left;
 }
 
@@ -341,7 +226,7 @@ dt.mapicon {
     width: 120px;
 }
 
-#ui-id-2{
+.ui-autocomplete{
     height: 350px;
     overflow-y: scroll;
     overflow-x: hidden;

@@ -68,7 +68,7 @@ else {
  
  <h3 style="font-size:150%; margin-bottom:20px">Now Viewing: <?php echo $area_name; ?></h3><?php
 
-require_once "dbauth.config";
+require_once "dbauth.php";
 	
     #connect to the database
 $DB = mysql_connect('localhost', $user, $password);
