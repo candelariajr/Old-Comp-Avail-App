@@ -51,7 +51,7 @@ function generateSQL(){
     $sql.=" WHERE id = ".sanitizeInt($_GET['id']);
     //DEBUG: Uncommenting this line results in the SQL being output to the modal dialog. Used
     //by me for troubleshooting.
-    echo($sql);
+    //echo($sql);
     return $sql;
 }
 
