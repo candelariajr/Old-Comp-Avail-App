@@ -53,6 +53,7 @@ else{
 <body>
 <div id="main">
 	<h2>Computer Availability</h2>
+	<button class="button" id="addButton">Add Computer</button>
 	<div id="map_container_600">
 		<h3>Now Viewing:
 			<?php
@@ -247,14 +248,14 @@ else{
 					Search by Tag:
 				</td>
 				<td>
-					<button id="searchButton">Seach</button>
+					<button id="searchButton" class="button">Search</button>
 				</td>
 				<td> </td>
 			</tr>
 			<tr>
 				<th>Param.</th>
 				<th>Orig.</th>
-				<th>New.</th>
+				<th>New</th>
 			</tr>
 			<tr>
 				<td>
@@ -405,7 +406,7 @@ else{
 			</tr>
 			<tr>
 				<td>
-					<button onclick="submit()">Submit Changes</button>
+					<button class="button" onclick="submit()">Submit Changes</button>
 				</td>
 				<td>
 					<span id="updateResults"> </span>
@@ -546,15 +547,147 @@ else{
 	<div id="dialog-message" title="Server Reply">
 		<div id="messageContent"></div>
 	</div>
+	<div id="add-dialog-message" title="Add Machine Reply">
+		<div id="addMessageContent"></div>
+	</div>
 </div>
 <script type="text/javascript" language="javascript" src="tooltip/script.js"></script>
-<div id="dialog" title="SearchBox" style="display:none">
+<div id="generic-dialog" title="Message" style="display:none">
+	<div id="genericContent"></div>
+</div>
+<div id="dialog" title="Search By Tag" style="display:none">
 	<br>
 	<div class="ui-widget">
 		<label for="combobox">Tag</label>
 		<select id="combobox">
 			<option value="">Select one...</option>
 		</select>
+	</div>
+</div>
+<div id="addMachineDialog" title="Add Machine" style="display:none">
+	<div id="addForm">
+		<table style="width: 270px">
+			<caption>
+				Input Parameters
+			</caption>
+			<tr>
+				<td colspan="2">
+					<span id="recordID"></span>
+				</td>
+			</tr>
+			<tr>
+				<th>Param.</th>
+				<th>Value</th>
+			</tr>
+			<tr>
+				<td>
+					<label for="addName">Name</label>
+				</td>
+				<td>
+					<input id="addName" name="newName" type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addTop">Top</label>
+				</td>
+				<td>
+					<input id="addTop" name="addTop" type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addRight">Right</label>
+				</td>
+				<td>
+					<input id="addRight" name="addRight" type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addTableName">Table</label>
+				</td>
+				<td>
+					<input id="addTableName" name="addTableName" type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addSeat">Seat No</label>
+				</td>
+				<td>
+					<input id="addSeat" name="addSeat" type="text">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addFloor">Floor No</label>
+				</td>
+				<td>
+					<select id="addFloor" name="addFloor" class="editorDropdown">
+						<option value="0">Lower Level</option>
+						<option value="1">First Floor</option>
+						<option value="2">Second Floor</option>
+						<option value="3">Third Floor</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addType">Type</label>
+				</td>
+				<td>
+					<select id="addType" name="addType" class="editorDropdown">
+						<option value="PC">PC</option>
+						<option value="Mac">Mac</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addPublic">Public?</label>
+				</td>
+				<td>
+					<select id="addPublic" name="newPublic" class="editorDropdown">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addExcluded">Excluded?</label>
+				</td>
+				<td>
+					<select id="addExcluded" name="newExcluded" class="editorDropdown">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addDedicated">Dedicated?</label>
+				</td>
+				<td>
+					<select id="addDedicated" name="addDedicated" class="editorDropdown">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="addPilot">Pilot?</label>
+				</td>
+				<td>
+					<select id="addPilot" name="addPilot" class="editorDropdown">
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select>
+				</td>
+			</tr>
+		</table>
 	</div>
 </div>
 </body>

@@ -5,6 +5,7 @@ $(function(){
     addEvents();
     populateSearch();
     launchSearch();
+    launchAdd();
 });
 
 function addEvents(){
@@ -70,6 +71,7 @@ function populateOriginalParams(id){
             if(data.floor = returnFloor()){
                 selectOnThisFloor(data.computer_name);
             }
+            $('#recordID').html("Id: <span id='recordIDNum'>"  + data.id + "</span>");
         }
     });
 }
@@ -319,10 +321,99 @@ function submit(){
         });
     }
     else{
-        alert("Cannot submit changes where no machine is selected!");
+        makeGenericMessageDialog("Cannot submit changes where no machine is selected!");
     }
 }
 
 function filterNull(element){
     return (element == undefined || element == "") ? "null" : element;
+}
+
+function launchAdd(){
+    $('#addMachineDialog').dialog({
+        autoOpen:false,
+        buttons: {
+            OK : function(){
+                //alert("OK");
+                //alert($('#combobox').val());
+                addMachine();
+            },
+            Cancel : function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+    $('#addButton').click(function(){
+        $('#addMachineDialog').dialog("open");
+    });
+}
+
+function addMachine(){
+    var missingValues = false;
+    //20/20 Hindsight: Should have done this better. With the form generated with self-referencing so
+    //the elements could be valuated over iteration.
+    //This is gross: I am sorry. "Weeks of programming can save you hours of planning"
+    var addName = $("#addName").val();
+    var addTop = $("#addTop").val();
+    var addLeft = $("#addRight").val();
+    var addTableName = $("#addTableName").val();
+    var addSeat = $("#addSeat").val();
+    var addFloor = $("#addFloor").val();
+    var addType = $("#addType").val();
+    var addPublic = $("#addPublic").val();
+    var addExcluded = $("#addExcluded").val();
+    var addDedicated = $("#addDedicated").val();
+    var addPilot = $("#addPilot").val();
+
+    //Forgive me of my sin. Please ignore this, and pretend is not there. This is the kind of spaghetti
+    //that people revoke CS Degrees over.
+    if(addName == ""||
+        addTop == undefined ||
+        addLeft == undefined ||
+        addTableName == undefined ||
+        addSeat == undefined){
+        makeGenericMessageDialog("Missing Values!");
+        missingValues = true;
+    }
+    if(!missingValues){
+        $.ajax({
+            url: "alterData.php?"
+            + "computer_name=" + addName
+            + "&top_pos=" + addTop
+            + "&left_pos=" + addLeft
+            + "&table_name=" + addTableName
+            + "&seat=" + addSeat
+            + "&floor=" + addFloor
+            + "&computer_type=" + addType
+            + "&is_public=" + addPublic
+            + "&is_excluded=" + addExcluded
+            + "&is_dedicated=" + addDedicated
+            + "&is_pilot=" + addPilot,
+            success: function(result){
+                $("#addMessageContent").html(result);
+                $("#add-dialog-message").dialog({
+                    modal: true,
+                    buttons: {
+                        Ok: function() {
+                            $(this).dialog("close");
+                            location.reload();
+                        }
+                    }
+                });
+            }
+        });
+    }
+}
+
+function makeGenericMessageDialog(message){
+    $('#genericContent').html(message);
+    $('#generic-dialog').dialog({
+        buttons: {
+            OK : function(){
+                //alert("OK");
+                //alert($('#combobox').val());
+                $(this).dialog("close");
+            }
+        }
+    });
 }
