@@ -296,6 +296,8 @@ function submit(){
             url: "alterData.php?"
             + "id=" + filterNull(idContainer)
             + "&computer_name=" + filterNull($("#newName").val())
+            //PER INITIAL DEPLOYMENT: WERE NOT ALLOWING THE ADJUSTMENT OF MAP COORDINATES
+            //    - JP/JC
             + "&top_pos=" + filterNull($("#newTop").val())
             + "&left_pos=" + filterNull($("#newRight").val())
             + "&table_name=" + filterNull($("#newTableName").val())

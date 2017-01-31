@@ -6,6 +6,9 @@
  * Time: 8:21 AM
  */
 
+//If you enable this, you will get RAW SQL output as well as GET/POST data, etc output to the screen.
+//Do NOT use in production
+$debug = false;
 updateData();
 /**
  * Auto-invoke function that starts the process of updating the database
@@ -21,7 +24,7 @@ function updateData(){
 }
 /*
  *
- * SQL GERNRATION CODE
+ * SQL GENERATION CODE
  *
  * */
 /**
@@ -37,12 +40,13 @@ function generateUpdateSQL(){
             $updateCount++;
         }
     }
+    $updateCount--;
     $notInts = array("computer_name","computer_type","table_name");
     foreach($_GET as $key => $value){
         if($value != "null" && $key != "id"){
-            if(--$updateCount != 1){
+            if(--$updateCount != 0){
                 $sql.= $key." ";
-                $sql.= in_array($key, $notInts) ? " = '".sanitizeAlphaNum($value)."' " : "= ".sanitizeInt($value).", ";
+                $sql.= in_array($key, $notInts) ? " = '".sanitizeAlphaNum($value)."', " : "= ".sanitizeInt($value).", ";
             }else{
                 $sql.= $key." ";
                 $sql.= in_array($key, $notInts) ? " = '".sanitizeAlphaNum($value)."' " : "= ".sanitizeInt($value)." ";
@@ -51,9 +55,15 @@ function generateUpdateSQL(){
         }
     }
     $sql.=" WHERE id = ".sanitizeInt($_GET['id']);
-    //DEBUG: Uncommenting this line results in the SQL being output to the modal dialog. Used
-    //by me for troubleshooting.
-    echo("$sql<br>");
+
+    GLOBAL $debug;
+    if($debug){
+        echo("$sql<br>");
+        printGet();
+    }
+    if(!uniqueCompName(sanitizeAlphaNum($_GET['computer_name']))){
+        $sql = "";
+    }
     return $sql;
 }
 
@@ -71,9 +81,15 @@ function generateInsertSQL(){
     $sql.= sanitizeInt($_GET['is_pilot']).", ";
     $sql.= sanitizeInt($_GET['is_dedicated']);
     $sql.=");";
-    //DEBUG: Uncommenting this line results in the SQL being output to the modal dialog. Used
-    //by me for troubleshooting.
-    //echo("$sql<br>");
+
+    GLOBAL $debug;
+    if($debug){
+        echo("$sql<br>");
+        printGet();
+    }
+    if(!uniqueCompName(sanitizeAlphaNum($_GET['computer_name']))){
+        $sql = "";
+    }
     return $sql;
 }
 
@@ -128,8 +144,13 @@ function update($queryString){
     if(mysqli_connect_errno()){
         echo "CANT CONNECT TO DB! Your changes haven't been saved!";
     }
-    echo (mysqli_query($conn, $queryString)) ? "Update Successful" : "Update Failed!";
-    mysqli_close($conn);
+    if($queryString != ""){
+        echo (mysqli_query($conn, $queryString)) ? "Update Successful" : "Update Failed! <br>Note: editing of coordinates has been temporarily disabled";
+        mysqli_close($conn);
+    }else{
+        echo "Query was rejected by server. Make sure this isn't a duplicate computer name or use of a disabled editing feature.";
+    }
+
 }
 /*
  *
@@ -137,3 +158,40 @@ function update($queryString){
  *
  * */
 
+/**
+ * Prints all get variables. This is for debugging
+ */
+function printGet(){
+    foreach($_GET as $key => $value)
+    {
+        echo 'Key = ' . $key;
+        echo 'Value= ' . $value . '<br>';
+    }
+}
+
+function uniqueCompName($computerName){
+    $server = "";
+    $user = "";
+    $password = "";
+    $database = "";
+    require("dbauth.php");
+    $conn = new mysqli($server, $user, $password, $database);
+    if(mysqli_connect_errno()){
+        echo "CANT CONNECT TO DB!";
+    }
+    $queryString = "SELECT COUNT(*) AS NAME_COUNT FROM compstatus WHERE Computer_name = '".sanitizeAlphaNum($computerName)."';";
+    $results = $conn->query($queryString);
+    if($results->num_rows == 1){
+        $row = $results->fetch_assoc();
+        if($row['NAME_COUNT'] > 0 ){
+            echo "ComputerName already present!";
+            return false;
+        }
+        else{
+            return true;
+        }
+    }else{
+        echo "SQL Generation Error: Incorrect Aggregate";
+        return false;
+    }
+}

@@ -41,7 +41,7 @@ else{
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<!--<meta http-equiv="Refresh" content="30"; url="tooltip.php?id=1">-->
+	<!--<meta http-equiv="Refresh" content="3"; url="tooltip.php?id=1">-->
 	<link href="map.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="tooltip/style.css" />
 	<link rel="stylesheet" type="text/css" href="CSS/jquery-ui.min.css">
