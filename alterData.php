@@ -73,8 +73,8 @@ function generateInsertSQL(){
     $sql.=");";
     //DEBUG: Uncommenting this line results in the SQL being output to the modal dialog. Used
     //by me for troubleshooting.
-    echo("$sql<br>");
-    return "";
+    //echo("$sql<br>");
+    return $sql;
 }
 
 /**
